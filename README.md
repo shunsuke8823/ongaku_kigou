@@ -270,4 +270,15 @@
 
 ## 11. 画面遷移図
 
-  Figmaリンク：[かたちではっけん！ おんがくきごう♪ 画面遷移図] (https://www.figma.com/design/jNjACfPuR9QRSBHYFl2GBv/%E3%81%8B%E3%81%9F%E3%81%A1%E3%81%A7%E3%81%AF%E3%81%A3%E3%81%91%E3%82%93%EF%BC%81-%E3%81%8A%E3%82%93%E3%81%8C%E3%81%8F%E3%81%8D%E3%81%94%E3%81%86%E2%99%AA?m=auto&t=4PsxdjSnl0Zplzql-1)
+- Figmaリンク：[かたちではっけん！ おんがくきごう♪ 画面遷移図](https://www.figma.com/design/jNjACfPuR9QRSBHYFl2GBv)
+
+## 12. ER図
+- dbdiagram.ioリンク: [かたちではっけん！-おんがくきごう♪ ER図](https://dbdiagram.io/d/かたちではっけん！-おんがくきごう♪-6af000977ded3580fae0bfd4)
+
+### 補足:DBの制約だけでは守れないルールについて
+
+- 全ての記号は、特徴・カテゴリを1つ以上持つ。
+- 全ての記号は、参考資料を2つ以上持つ。
+- `symbol_image` と `symbol_character` は、どちらか一方は必ず入っている。
+
+→対策:seed投入後にrakeタスクで違反がないか自動チェックする。
