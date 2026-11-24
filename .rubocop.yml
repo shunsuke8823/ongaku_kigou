@@ -1,3 +1,11 @@
+plugins:
+  - rubocop-rspec
+
+# rspecのルールにpendingのものがあったが、記述ルールに慣れていないため全てオンになるよう下記記述をした
+# オンになるのはpendingのルールのみ、omakaseで最初からオフになっているルールは適用外
+AllCops:
+  NewCops: enable
+
 # Omakase Ruby styling for Rails
 inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
