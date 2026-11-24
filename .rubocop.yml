@@ -6,3 +6,17 @@ inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 # # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
 # Layout/SpaceInsideArrayLiteralBrackets:
 #   Enabled: false
+
+# specフォルダもStyle/StringLiteralsで検出できるようにIncludeに追加
+# omakaseのmainリポジトリを見たらdb/seeds.rbが追加されており、このアプリでもseeds.rbは使用するためIncludeに追加
+# Includeすると対象を全て上書きする設定だったため、omakase 1.1.0を元に対象をすべて記述
+# omakaseをアップデートしたら対象が変化していないか確認し、都度修正する
+Style/StringLiterals:
+  Include:
+  - "app/**/*"
+  - "config/**/*"
+  - "lib/**/*"
+  - "test/**/*"
+  - "Gemfile"
+  - "spec/**/*"
+  - "db/seeds.rb"
