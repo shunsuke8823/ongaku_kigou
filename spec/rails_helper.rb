@@ -1,3 +1,7 @@
+# テストの網羅度を測るためにsimplecovの記述を追加
+require "simplecov"
+SimpleCov.start "rails"
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require "spec_helper"
 ENV["RAILS_ENV"] ||= "test"
