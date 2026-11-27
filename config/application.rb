@@ -23,5 +23,12 @@ module OngakuKigou
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # generate controllerで不要なものを生成しないように設定
+    config.generators do |g|
+      g.view_specs false
+      g.helper_specs false
+      g.helper false
+    end
   end
 end
