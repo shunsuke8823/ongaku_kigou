@@ -1,0 +1,30 @@
+plugins:
+  - rubocop-rspec
+
+# rspecのルールにpendingのものがあったが、記述ルールに慣れていないため全てオンになるよう下記記述をした
+# オンになるのはpendingのルールのみ、omakaseで最初からオフになっているルールは適用外
+AllCops:
+  NewCops: enable
+
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+# Overwrite or add rules to create your own house style
+#
+# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
+# Layout/SpaceInsideArrayLiteralBrackets:
+#   Enabled: false
+
+# specフォルダもStyle/StringLiteralsで検出できるようにIncludeに追加
+# omakaseのmainリポジトリを見たらdb/seeds.rbが追加されており、このアプリでもseeds.rbは使用するためIncludeに追加
+# Includeすると対象を全て上書きする設定だったため、omakase 1.1.0を元に必要な対象だけ記述
+# omakaseをアップデートしたら対象が変化していないか確認し、都度修正する
+# このアプリではRSpecを使用しており、Minitest用のtestフォルダは削除したため対象からも削除
+Style/StringLiterals:
+  Include:
+  - "app/**/*"
+  - "config/**/*"
+  - "lib/**/*"
+  - "Gemfile"
+  - "spec/**/*"
+  - "db/seeds.rb"
